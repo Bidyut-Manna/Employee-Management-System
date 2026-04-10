@@ -1,7 +1,7 @@
 package com.company.ems.service;
 
 import com.company.ems.entity.Users;
-import com.company.ems.payload.request.RegisterRequest;
+import com.company.ems.payload.request.UserRegisterRequest;
 import com.company.ems.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -17,11 +17,11 @@ public class RegisterService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    public void register(RegisterRequest registerRequest) {
+    public void register(UserRegisterRequest userRegisterRequest) {
         Users user = new Users();
-        user.setUsername(registerRequest.getUsername());
-        user.setPassword(passwordEncoder.encode(registerRequest.getPassword()));
-        user.setRole(Users.Role.valueOf(registerRequest.getRole()));
+        user.setUsername(userRegisterRequest.getUsername());
+        user.setPassword(passwordEncoder.encode(userRegisterRequest.getPassword()));
+        user.setRole(Users.Role.valueOf(userRegisterRequest.getRole()));
         user.setCreatedAt(LocalDateTime.now());
         userRepository.save(user);
     }

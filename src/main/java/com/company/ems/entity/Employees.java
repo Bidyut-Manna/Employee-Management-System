@@ -19,7 +19,7 @@ public class Employees {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    //One Employee belongs to one User
+    //Many Employee belongs to one User
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private Users user;

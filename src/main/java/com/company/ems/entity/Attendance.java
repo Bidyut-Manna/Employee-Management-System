@@ -2,14 +2,10 @@ package com.company.ems.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.time.LocalDate;
-import java.time.LocalTime;
 
 @Entity
-@Table(name = "attendance")
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -19,26 +15,16 @@ public class Attendance {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // Many attendance records belong to one employee
-    @ManyToOne
-    @JoinColumn(name = "employee_id", nullable = false)
-    private Employees employee;
-
-    @Column(nullable = false)
-    private LocalDate date;
-
-    @Column(name = "check_in")
-    private LocalTime checkIn;
-
-    @Column(name = "check_out")
-    private LocalTime checkOut;
+    private Long employeeId;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
-    private Status status;
+    private AttendanceStatus attendance;
 
-    public enum Status {
+    private LocalDate date;
+
+    public enum AttendanceStatus {
         PRESENT,
         ABSENT
     }
 }
+
