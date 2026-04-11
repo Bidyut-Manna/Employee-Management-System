@@ -6,7 +6,7 @@ A robust backend application for managing employees, attendance, payroll, and au
 
 ## Features
 
-* User Registration & Authentication (JWT आधारित)
+* User Registration & Authentication (JWT)
 * Secure APIs with Spring Security & JWT
 * Employee Management
 * Attendance Tracking System
@@ -26,13 +26,13 @@ A robust backend application for managing employees, attendance, payroll, and au
 
 ## API Endpoints (Sample)
 
-| Method | Endpoint           | Description       |
-| ------ | ------------------ | ----------------- |
-| POST   | /api/auth/register | Register user     |
-| POST   | /api/auth/login    | Login user        |
-| GET    | /api/employees     | Get all employees |
-| POST   | /api/attendance    | Mark attendance   |
-| POST   | /api/payroll       | Generate payroll  |
+| Method | Endpoint           | Description           |
+| ------ | ------------------ | -----------------     |
+| POST   | /api/register/user | Register user         |
+| POST   | /api/auth/login    | Login user            |
+| POST    | /api/employees     | Post employee details |
+| POST   | /api/attendance    | Mark attendance       |
+| POST   | /api/payroll       | Generate payroll      |
 
 ---
 
